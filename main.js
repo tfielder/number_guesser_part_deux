@@ -1,3 +1,7 @@
+//note: functions were consistently defined using the ES5 format.
+//constants were not included but instead variables were defined using the ES5 format.
+//the decision here was due to familiarity with the ES5 format and its similarity to other programming languages such as C++.
+
 //uses accesses the rest of the code upon page loadup.
 $(document).ready(function() {
 //creates a global variable to hold the random number stored and initializes it with 0.
