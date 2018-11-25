@@ -1,0 +1,76 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #404041;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  color: #404041;
+  font-weight: 300;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #404041;
+  font-size: 10em;
+  font-weight: 300;
+  margin: 0;
+}
+
+#user-guess {
+  width: 100%;
+}
+
+.header {
+  background-color: #404041;
+  text-align: center;
+}
+
+.primary-font {
+  color: #ED458B;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  display: inline;
+}
+
+.secondary-font {
+  color: #E6E7E8;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  display: inline;
+}
+
+.js-guess-text {
+  color: #EB008B;
+}
+
+.form-div {
+  width: 40%;
+  display: inline-block;
+  text-align: center;
+}
+
+button {
+  background-color: #D0D2D3;
+  color: #FFFFFF;
+  border-radius: 50px;
+  border-color: 0;
+  width: 25%;
+  margin: 1em;
+}
+
+button:hover {
+  background-color: #EB008B;
+  color: #FFFFFF;
+}
+
+button:disabled {
+  background-color: blue;
+  color: red;
+}
+
+button:active {
+  background-color: #929497;
+  color: #FFFFFF;
+}
