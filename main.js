@@ -75,72 +75,113 @@ $(document).ready(function() {
   //Reset button
 //when the reset button is clicked the following code executes
   $(".js-reset-button").click(function () {
+//the input field for a user's guess is set to an empty string
     $('#user-guess').val("");
+//the placeholder text for displaying a user's guess is set to an empty string
     $('.js-guess-text').text("");
+//a message appears that notifies the user the game has been reset
     $('.first-line').text("The game has been reset");
+//a message appears that notifies the user that a new random number is created
     $('.result-line').text("A new number was created");
+//the function to generate a new random number is called.
     generateRandomNumber(min, max);
   });
 
   //Processes a Guess
+//a function to validate a guess with the parameter of the guess
   function validateGuess(guess) {
+//checks if the parameter passed to the function is a number by passing it to the isNumber funciton
     if (isNumber(guess)){
+//passes the guess parameter to the numberWithinRange function to determine if the parameter is within a specified range.
       if (numberWithinRange(guess)) {
+//passes the parameter to the processValidGuess function to process a valid guess
         processValidGuess(guess);
+//an else statement if the previous if staement fails
       } else {
+//prints to the screen that a number is out of range if the previous statement fails
         $('.result-line').text("That number is out of range");
       }
+//an else statement if the original parameter is determened to be not a number
     } else {
+//calls the function to return an error message
       returnErrorMessage();
     }
   }
 
   //Tests if the response is a number
+//a function that takes a parameter to determine if it is a number
   function isNumber(response) {
+//the parameter passed to the function is parsed as an integer and stored as a variable called response.
     var response = parseInt(response);
+//if the parameter was successfully parsed as an integer the following lines of code will execute
     if (response) {
+//the function returns true if the parameter passed is parsed successfully as an integer
       return true;
+//if not the above
     } else {
+//the function returns false if the parameter passed is unsuccessful in parsing as an integer i.e. the response is not a number
       return false;
     }
   }
 
   //Determines if a number is within a valid range
+//function definition for numberWithinRange to determine if a passed number is within a specified range of values defined by the user.
   function numberWithinRange(guess) {
+//creates an if statment to test if the passed parameter is greater than or equal to the variable min and less than or equal to the variable max (previously determined by the user)
     if (min <= guess && guess<= max){
+//the function returns true if a guess is within the min and max values defined by the user
       return true;
+//if the guess is not within the defined range provided by the user
     } else {
+//the function returns false
       return false;
     }
   }
 
   //Determines if guess is correct, high, or low
+//a function definition for processing a guess that has been determined to be valid
   function processValidGuess(guess) {
+//if the parameter passed is less than the value of the random number
     if (guess < aRandomNumber) {
+//a message prints to the screen that the value is too low
       $('.result-line').text("That is too low");
+//otherwise if a guess is greater than the random number
     } else if (guess > aRandomNumber) {
+//a message prints to the screen that the guessed number is too high
       $('.result-line').text("That is too high");
+//otherwise the function determines that the user has guessed correctly
     } else {
+//the function to increase wins is called (increasing wins by one)
       increaseWins();
+//the function to increase the min and max values is called
       increaseMinMax();
+//the text "Boom" is printed to the screen to notify the user that they have guessed correctly
       $('.result-line').text("BOOM! Click Reset to continue playing");
     }
   }
 
   //increaseWins
+//a function to increase the number of wins
   function increaseWins() {
+//the variable wins is increased by one
     wins += 1;
+//the placeholder text for the number of user wins is updated
     $('.wins').text("Wins: " + wins);
   }
 
   //increase min and max
+//the function template for increasing the range of the max and min values
   function increaseMinMax() {
+//decreases the minimum value by ten
     min -= 10;
+//increases the maximum value by ten
     max += 10;
   }
 
   //Returns an error message if the guess is not a valid response
+//the function that returns an error message
   function returnErrorMessage() {
+//prints the message to the screen that the input is not valid
     $('.result-line').text("That is not a valid response");
   }
 
