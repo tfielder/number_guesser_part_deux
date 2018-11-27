@@ -1,13 +1,13 @@
-#number_guesser_part_deux
+# number_guesser_part_deux
 
-#Author:
+## Author:
 Tim Fielder (based off of turing.io number guesser challenge)
-#Date:
+## Date:
 11.25.18
-#Version:
+## Version:
 1.0
 
-#Description:
+## Description:
 Number Guesser is a simple game in which a player may specify a given minimum
 and maximum number range and the browser will generate a random number for the
 player to guess. Upon successfully guessing the correct randomly generated number,
@@ -17,9 +17,9 @@ selects a numerical value for both the min and max numbers as well as a guess.
 This project is largely intended to explore the use of JavaScript, JQuery, and CSS
 within a Rails environment.
 
-#To get started:
+## To get started:
 Go to https://tfielder.github.io/number_guesser_part_deux/index.html
 to begin.
 
-#Special Note:
+## Special Note:
 The app was originally created in a Rails environment. To see the original commits for this project check out: https://github.com/tfielder/number_guesser
